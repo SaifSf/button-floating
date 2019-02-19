@@ -112,6 +112,12 @@ public class SubActionButton extends FrameLayout {
             return this;
         }
 
+        public Builder setLayoutParams(int width, int height) {
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(width, height, Gravity.TOP | Gravity.LEFT);
+            this.layoutParams = params;
+            return this;
+        }
+
         public Builder setTheme(int theme) {
             this.theme = theme;
             return this;

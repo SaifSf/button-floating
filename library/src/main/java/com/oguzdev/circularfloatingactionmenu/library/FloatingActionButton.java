@@ -231,6 +231,8 @@ public class FloatingActionButton extends FrameLayout {
         private int position;
         private View contentView;
         private LayoutParams contentParams;
+        private int size_action_button;
+        private int margin_;
         private boolean systemOverlay;
 
         public Builder(Context context) {
@@ -247,11 +249,17 @@ public class FloatingActionButton extends FrameLayout {
             setSystemOverlay(false);
         }
 
+        public Builder setLayoutParams(int width, int height, int marginLeft, int marginTop, int marginRight, int marginBottom) {//
+            FrameLayout.LayoutParams layoutParams = new LayoutParams(width, height, Gravity.BOTTOM | Gravity.RIGHT);
+            layoutParams.setMargins(marginLeft, marginTop, marginRight, marginBottom);
+            this.layoutParams = layoutParams;
+            return this;
+        }
+
         public Builder setLayoutParams(ViewGroup.LayoutParams params) {
             this.layoutParams = params;
             return this;
         }
-
         public Builder setTheme(int theme) {
             this.theme = theme;
             return this;
